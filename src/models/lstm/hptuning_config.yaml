@@ -1,0 +1,21 @@
+studySpec:
+  metrics:
+  - metricId: r2_score
+    goal: MAXIMIZE
+  parameters:
+  - parameterId: input_window_size
+    integerValueSpec:
+      minValue: 2
+      maxValue: 300
+  - parameterId: target_offset_smpl
+    integerValueSpec:
+      minValue: 5
+      maxValue: 60
+trialJobSpec:
+  workerPoolSpecs:
+  - machineSpec:
+      machineType: n1-standard-4
+    replicaCount: 1
+    containerSpec:
+      imageUri: gcr.io/thematic-scope-395304/lstm_image
+
